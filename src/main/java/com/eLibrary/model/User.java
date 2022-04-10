@@ -1,12 +1,11 @@
 package com.eLibrary.model;
 
-import lombok.Value;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Value
+@Table(name = "user")
 public class User {
 
     @Id
@@ -14,4 +13,16 @@ public class User {
 
     String name;
     String password;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
