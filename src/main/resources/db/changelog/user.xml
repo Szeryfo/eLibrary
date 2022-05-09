@@ -23,4 +23,13 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="user_2" author="kurzels">
+
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="user"/>
+        </preConditions>
+
+        <addAutoIncrement tableName="user" columnName="id" columnDataType="BIGINT"/>
+    </changeSet>
 </databaseChangeLog>
