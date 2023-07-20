@@ -1,13 +1,10 @@
-package com.eLibrary.mapper;
-
-import com.eLibrary.dto.UserDto;
-import com.eLibrary.model.UserEntity;
-import org.mapstruct.Mapper;
+package com.eLibrary.user;
 
 import java.util.List;
+import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface UserMapper {
+interface UserMapper {
 
     UserDto toDto(UserEntity userEntity);
 

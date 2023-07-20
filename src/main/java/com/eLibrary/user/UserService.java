@@ -1,14 +1,11 @@
-package com.eLibrary.service;
+package com.eLibrary.user;
 
-import com.eLibrary.dto.UserDto;
-import com.eLibrary.mapper.UserMapper;
-import com.eLibrary.repository.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Service {
+class UserService {
 
     @Autowired
     UserRepository repository;
@@ -22,11 +19,11 @@ public class Service {
         return mapper.toDtos(all);
     }
 
-    public UserDto save(UserDto userDto) {
-        var userEntity = mapper.toEntity(userDto);
-        var save = repository.save(userEntity);
+    public UserDto save(UserDto dto) {
+        var entity = mapper.toEntity(dto);
+        var savedEntity = repository.save(entity);
 
-        return mapper.toDto(save);
+        return mapper.toDto(savedEntity);
     }
 
     public void deleteById(Long id) {

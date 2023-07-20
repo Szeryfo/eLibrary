@@ -1,20 +1,19 @@
-package com.eLibrary.model;
+package com.eLibrary.user;
 
-import lombok.Getter;
-import lombok.Setter;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import static javax.persistence.GenerationType.IDENTITY;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "user")
 @Setter
 @Getter
-public class UserEntity {
+class UserEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
