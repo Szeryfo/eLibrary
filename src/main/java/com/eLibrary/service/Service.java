@@ -2,12 +2,10 @@ package com.eLibrary.service;
 
 import com.eLibrary.dto.UserDto;
 import com.eLibrary.mapper.UserMapper;
-import com.eLibrary.model.UserEntity;
 import com.eLibrary.repository.UserRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class Service {
@@ -19,15 +17,15 @@ public class Service {
     UserMapper mapper;
 
     public List<UserDto> getAll() {
-
         var all = repository.findAll();
+
         return mapper.toDtos(all);
     }
 
     public UserDto save(UserDto userDto) {
-
         var userEntity = mapper.toEntity(userDto);
-        UserEntity save = repository.save(userEntity);
+        var save = repository.save(userEntity);
+
         return mapper.toDto(save);
     }
 

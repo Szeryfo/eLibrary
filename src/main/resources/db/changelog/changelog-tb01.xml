@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create table USER" author="Sebastian Kurzel">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="USER"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="USER">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="password" type="VARCHAR(100)"/>
+        </createTable>
+
+        <addAutoIncrement tableName="USER" columnName="id" columnDataType="BIGINT"/>
+    </changeSet>
+</databaseChangeLog>
