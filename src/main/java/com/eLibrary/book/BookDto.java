@@ -1,4 +1,4 @@
-package com.eLibrary.user;
+package com.eLibrary.book;
 
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
@@ -13,9 +13,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-class UserDto {
+class BookDto {
 
     Long id;
     String name;
-    String password;
+    String publisher; //dictionary?
+    Integer publicationYear;
+    String author;
+    Long noOfInStock;
 }

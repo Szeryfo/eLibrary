@@ -21,4 +21,25 @@
 
         <addAutoIncrement tableName="USER" columnName="id" columnDataType="BIGINT"/>
     </changeSet>
+
+    <changeSet id="create table BOOK" author="Sebastian Kurzel">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="BOOK"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="BOOK">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="publisher" type="VARCHAR(100)"/>
+            <column name="publicationYear" type="INTEGER"/>
+            <column name="author" type="VARCHAR(100)"/>
+            <column name="noOfInStock" type="BIGINT"/>
+        </createTable>
+
+        <addAutoIncrement tableName="BOOK" columnName="id" columnDataType="BIGINT"/>
+    </changeSet>
 </databaseChangeLog>
