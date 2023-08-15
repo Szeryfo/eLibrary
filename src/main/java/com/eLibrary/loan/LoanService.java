@@ -1,25 +1,25 @@
-package com.eLibrary.book;
+package com.eLibrary.loan;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-class BookService {
+class LoanService {
 
     @Autowired
-    BookRepository repository;
+    LoanRepository repository;
 
     @Autowired
-    BookMapper mapper;
+    LoanMapper mapper;
 
-    public List<BookDto> getAll() {
+    public List<LoanDto> getAll() {
         var all = repository.findAll();
 
         return mapper.toDtos(all);
     }
 
-    public BookDto save(BookDto dto) {
+    public LoanDto save(LoanDto dto) {
         var entity = mapper.toEntity(dto);
         var savedEntity = repository.save(entity);
 

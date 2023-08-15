@@ -1,4 +1,4 @@
-package com.eLibrary.user;
+package com.eLibrary.loan;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -6,15 +6,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserFacade {
+public class LoanFacade {
 
-    private final UserService service;
+    private final LoanService service;
 
-    public List<UserDto> getAll() {
+    public List<LoanDto> getAll() {
         return service.getAll();
     }
 
-    public UserDto save(UserDto userDto) {
+    public LoanDto save(LoanDto userDto) {
         return service.save(userDto);
     }
 

@@ -1,7 +1,9 @@
-package com.eLibrary.book;
+package com.eLibrary.loan;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,19 +12,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "book")
+@Table(name = "loan")
 @Setter
 @Getter
-class BookEntity {
+class LoanEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     Long id;
 
-    String name;
-    String publisher; //dictionary?
-    Integer publicationYear;
-    String author;
-    Integer noOfInStock;
-
+    Long userId;
+    Long bookId;
+    LocalDate date;
+    LocalTime time;
+    Long duration;
 }

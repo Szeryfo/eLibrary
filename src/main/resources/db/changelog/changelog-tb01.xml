@@ -37,9 +37,27 @@
             <column name="publisher" type="VARCHAR(100)"/>
             <column name="publicationYear" type="INTEGER"/>
             <column name="author" type="VARCHAR(100)"/>
-            <column name="noOfInStock" type="BIGINT"/>
+            <column name="noOfInStock" type="INTEGER"/>
         </createTable>
 
         <addAutoIncrement tableName="BOOK" columnName="id" columnDataType="BIGINT"/>
+    </changeSet>
+
+    <changeSet id="create table LOAN" author="Sebastian Kurzel">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="LOAN"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="LOAN">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="userId" type="BIGINT"/>
+            <column name="bookId" type="BIGINT"/>
+        </createTable>
+
+        <addAutoIncrement tableName="LOAN" columnName="id" columnDataType="BIGINT"/>
     </changeSet>
 </databaseChangeLog>

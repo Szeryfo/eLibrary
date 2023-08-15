@@ -1,4 +1,4 @@
-package com.eLibrary.book;
+package com.eLibrary.loan;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/book")
-class BookController {
+@RequestMapping("/loan")
+class LoanController {
 
     @Autowired
-    BookFacade facade;
+    LoanFacade facade;
 
     @GetMapping
-    public List<BookDto> getAll() {
+    public List<LoanDto> getAll() {
         return facade.getAll();
     }
 
     @PostMapping
-    public BookDto save(@RequestBody BookDto userDto) {
+    public LoanDto save(@RequestBody LoanDto userDto) {
         return facade.save(userDto);
     }
 

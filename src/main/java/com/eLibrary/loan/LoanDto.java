@@ -1,8 +1,10 @@
-package com.eLibrary.book;
+package com.eLibrary.loan;
 
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,12 +15,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-class BookDto {
+class LoanDto {
 
     Long id;
-    String name;
-    String publisher; //dictionary?
-    Integer publicationYear;
-    String author;
-    Integer noOfInStock;
+    Long userId;
+    Long bookId;
+    LocalDate date;
+    LocalTime time;
+    Long duration;
 }
