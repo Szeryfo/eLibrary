@@ -4,13 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 
 class LoanMapperTest {
 
     private final LoanMapper mapper = new LoanMapperImpl();
 
-    @Test
+    @RepeatedTest(100000)
     public void testMapping() {
         // given
         var localDate = LocalDate.now();

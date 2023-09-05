@@ -2,13 +2,13 @@ package com.eLibrary.user;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 
 class UserMapperTest {
 
     private final UserMapper mapper = new UserMapperImpl();
 
-    @Test
+    @RepeatedTest(100000)
     public void testMapping() {
         // given
         var dto = UserDto.builder()

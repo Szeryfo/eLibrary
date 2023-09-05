@@ -2,13 +2,13 @@ package com.eLibrary.book;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 
 class BookMapperTest {
 
     private final BookMapper mapper = new BookMapperImpl();
 
-    @Test
+    @RepeatedTest(100000)
     public void testMapping() {
         // given
         var dto = BookDto.builder()
