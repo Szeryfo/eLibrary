@@ -10,7 +10,7 @@ public class WebApp {
         SpringApplication.run(WebApp.class, args);
 
         // for tests only
-        System.exit(0);
+     //   System.exit(0);
     }
 
 }
