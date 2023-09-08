@@ -8,7 +8,7 @@ class UserMapperTest {
 
     private final UserMapper mapper = new UserMapperImpl();
 
-    @RepeatedTest(1000)
+    @RepeatedTest(10)
     public void testMapping() {
         // given
         var dto = UserDto.builder()

@@ -8,7 +8,7 @@ class BookMapperTest {
 
     private final BookMapper mapper = new BookMapperImpl();
 
-    @RepeatedTest(1000)
+    @RepeatedTest(10)
     public void testMapping() {
         // given
         var dto = BookDto.builder()

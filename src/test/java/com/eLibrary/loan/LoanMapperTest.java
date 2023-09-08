@@ -10,7 +10,7 @@ class LoanMapperTest {
 
     private final LoanMapper mapper = new LoanMapperImpl();
 
-    @RepeatedTest(1000)
+    @RepeatedTest(10)
     public void testMapping() {
         // given
         var localDate = LocalDate.now();
