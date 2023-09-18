@@ -20,7 +20,7 @@ class BookEntity {
     Long id;
 
     String name;
-    String publisher; //dictionary?
+    String publisher;
     Integer publicationYear;
     String author;
     Integer noOfInStock;
