@@ -13,7 +13,7 @@ public class Application {
         Random random = new Random();
 
         Thread.sleep(random.nextInt(10001));
-        Thread.sleep(random.nextInt(5001) + 5000);
+        Thread.sleep(random.nextInt(3001) + 7000);
         System.exit(0);
     }
 
