@@ -12,7 +12,7 @@ public class Application {
 
         Random random = new Random();
 
-        int randomDelay = random.nextInt(10001) + 7000; // 10-17
+        int randomDelay = random.nextInt(17001) + 7000; // 17-24
 
         Thread.sleep(randomDelay);
         System.exit(0);
