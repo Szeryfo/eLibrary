@@ -1,0 +1,208 @@
+00:00:00.002  Started by user admin
+00:00:00.322  [Pipeline] Start of Pipeline
+00:00:00.524  [Pipeline] node
+00:00:00.553  Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary
+00:00:00.564  [Pipeline] {
+00:00:00.610  [Pipeline] stage
+00:00:00.617  [Pipeline] { (Pobranie repo)
+00:00:00.667  [Pipeline] timestamps
+00:00:00.667  The timestamps step is unnecessary when timestamps are enabled for all Pipeline builds.
+00:00:00.674  [Pipeline] {
+00:00:00.704  [Pipeline] echo
+00:00:00.710  start pobranie repo
+00:00:00.747  [Pipeline] git
+00:00:00.755  The recommended git tool is: NONE
+00:00:00.755  No credentials specified
+00:00:00.756   > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\.git # timeout=10
+00:00:00.905  Fetching changes from the remote Git repository
+00:00:00.912   > git.exe config remote.origin.url https://github.com/Szeryfo/eLibrary.git # timeout=10
+00:00:01.000  Fetching upstream changes from https://github.com/Szeryfo/eLibrary.git
+00:00:01.000   > git.exe --version # timeout=10
+00:00:01.060   > git --version # 'git version 2.39.1.windows.1'
+00:00:01.060   > git.exe fetch --tags --force --progress -- https://github.com/Szeryfo/eLibrary.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+00:00:01.729   > git.exe rev-parse "refs/remotes/origin/release/4.0.0^{commit}" # timeout=10
+00:00:01.791  Checking out Revision ac490270593013558729ce81b543d3514e9c4871 (refs/remotes/origin/release/4.0.0)
+00:00:01.791   > git.exe config core.sparsecheckout # timeout=10
+00:00:01.851   > git.exe checkout -f ac490270593013558729ce81b543d3514e9c4871 # timeout=10
+00:00:01.966   > git.exe branch -a -v --no-abbrev # timeout=10
+00:00:02.046   > git.exe branch -D release/4.0.0 # timeout=10
+00:00:02.118   > git.exe checkout -b release/4.0.0 ac490270593013558729ce81b543d3514e9c4871 # timeout=10
+00:00:02.219  Commit message: "added release/4.0.0"
+00:00:02.220   > git.exe rev-list --no-walk ac490270593013558729ce81b543d3514e9c4871 # timeout=10
+00:00:02.358  [Pipeline] echo
+00:00:02.364  koniec pobranie repo
+00:00:02.371  [Pipeline] }
+00:00:02.407  [Pipeline] // timestamps
+00:00:02.421  [Pipeline] }
+00:00:02.464  [Pipeline] // stage
+00:00:02.511  [Pipeline] stage
+00:00:02.517  [Pipeline] { (Build)
+00:00:02.573  [Pipeline] timestamps
+00:00:02.573  The timestamps step is unnecessary when timestamps are enabled for all Pipeline builds.
+00:00:02.578  [Pipeline] {
+00:00:02.605  [Pipeline] echo
+00:00:02.611  start Build
+00:00:02.621  [Pipeline] bat
+00:00:02.910
+00:00:02.910  C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary>mvn clean package -DskipTests
+00:00:04.808  [INFO] Scanning for projects...
+00:00:05.071  [INFO]
+00:00:05.071  [INFO] ----------------------------< com:eLibrary >----------------------------
+00:00:05.071  [INFO] Building eLibrary 4.0.0
+00:00:05.071  [INFO] --------------------------------[ jar ]---------------------------------
+00:00:07.630  [INFO]
+00:00:07.630  [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ eLibrary ---
+00:00:07.884  [INFO] Deleting C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target
+00:00:08.837  [INFO]
+00:00:08.837  [INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ eLibrary ---
+00:00:08.837  [INFO] Copying 1 resource from src\main\resources to target\classes
+00:00:09.104  [INFO] Copying 102 resources from src\main\resources to target\classes
+00:00:27.203  [INFO]
+00:00:27.203  [INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ eLibrary ---
+00:00:29.101  [INFO] Changes detected - recompiling the module!
+00:00:29.101  [INFO] Compiling 22 source files to C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target\classes
+00:00:37.224  [INFO]
+00:00:37.224  [INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ eLibrary ---
+00:00:37.224  [INFO] skip non existing resourceDirectory C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\src\test\resources
+00:00:37.224  [INFO]
+00:00:37.224  [INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ eLibrary ---
+00:00:37.224  [INFO] Changes detected - recompiling the module!
+00:00:37.224  [INFO] Compiling 3 source files to C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target\test-classes
+00:00:39.741  [INFO]
+00:00:39.741  [INFO] --- maven-surefire-plugin:3.0.0:test (default-test) @ eLibrary ---
+00:00:41.149  [INFO] Tests are skipped.
+00:00:41.149  [INFO]
+00:00:41.149  [INFO] --- maven-jar-plugin:3.3.0:jar (default-jar) @ eLibrary ---
+00:00:41.825  [INFO] Building jar: C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target\eLibrary-4.0.0.jar
+00:01:49.741  [INFO]
+00:01:49.741  [INFO] --- spring-boot-maven-plugin:3.1.2:repackage (repackage) @ eLibrary ---
+00:04:41.241  [INFO] Replacing main artifact C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target\eLibrary-4.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+00:04:41.241  [INFO] The original artifact has been renamed to C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target\eLibrary-4.0.0.jar.original
+00:04:41.241  [INFO] ------------------------------------------------------------------------
+00:04:41.241  [INFO] BUILD SUCCESS
+00:04:41.241  [INFO] ------------------------------------------------------------------------
+00:04:41.241  [INFO] Total time:  04:22 min
+00:04:41.241  [INFO] Finished at: 2023-09-24T15:05:57+02:00
+00:04:41.241  [INFO] ------------------------------------------------------------------------
+00:04:41.264  [Pipeline] echo
+00:04:41.270  koniec Build
+00:04:41.282  [Pipeline] }
+00:04:41.322  [Pipeline] // timestamps
+00:04:41.339  [Pipeline] }
+00:04:41.382  [Pipeline] // stage
+00:04:41.410  [Pipeline] stage
+00:04:41.416  [Pipeline] { (Testy)
+00:04:41.455  [Pipeline] timestamps
+00:04:41.455  The timestamps step is unnecessary when timestamps are enabled for all Pipeline builds.
+00:04:41.461  [Pipeline] {
+00:04:41.501  [Pipeline] echo
+00:04:41.513  start Testy
+00:04:41.525  [Pipeline] bat
+00:04:41.794
+00:04:41.794  C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary>mvn test
+00:04:43.195  [INFO] Scanning for projects...
+00:04:43.793  [INFO]
+00:04:43.793  [INFO] ----------------------------< com:eLibrary >----------------------------
+00:04:43.793  [INFO] Building eLibrary 4.0.0
+00:04:43.793  [INFO] --------------------------------[ jar ]---------------------------------
+00:04:44.839  [INFO]
+00:04:44.839  [INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ eLibrary ---
+00:04:44.839  [INFO] Copying 1 resource from src\main\resources to target\classes
+00:04:45.116  [INFO] Copying 102 resources from src\main\resources to target\classes
+00:04:45.116  [INFO]
+00:04:45.116  [INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ eLibrary ---
+00:04:45.704  [INFO] Nothing to compile - all classes are up to date
+00:04:45.704  [INFO]
+00:04:45.704  [INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ eLibrary ---
+00:04:45.704  [INFO] skip non existing resourceDirectory C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\src\test\resources
+00:04:45.704  [INFO]
+00:04:45.704  [INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ eLibrary ---
+00:04:45.704  [INFO] Nothing to compile - all classes are up to date
+00:04:45.704  [INFO]
+00:04:45.704  [INFO] --- maven-surefire-plugin:3.0.0:test (default-test) @ eLibrary ---
+00:04:45.968  [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+00:04:46.225  [INFO]
+00:04:46.225  [INFO] -------------------------------------------------------
+00:04:46.225  [INFO]  T E S T S
+00:04:46.225  [INFO] -------------------------------------------------------
+00:04:47.607  [INFO] Running com.eLibrary.domain.book.BookMapperTest
+00:05:55.377  [INFO] Tests run: 350000, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.654 s - in com.eLibrary.domain.book.BookMapperTest
+00:05:55.377  [INFO] Running com.eLibrary.domain.loan.LoanMapperTest
+00:06:51.635  [INFO] Tests run: 350000, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 55.542 s - in com.eLibrary.domain.loan.LoanMapperTest
+00:06:51.635  [INFO] Running com.eLibrary.domain.user.UserMapperTest
+00:07:38.299  [INFO] Tests run: 350000, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.724 s - in com.eLibrary.domain.user.UserMapperTest
+00:07:38.299  [INFO]
+00:07:38.299  [INFO] Results:
+00:07:38.299  [INFO]
+00:07:38.299  [INFO] Tests run: 1050000, Failures: 0, Errors: 0, Skipped: 0
+00:07:38.299  [INFO]
+00:07:38.299  [INFO] ------------------------------------------------------------------------
+00:07:38.299  [INFO] BUILD SUCCESS
+00:07:38.299  [INFO] ------------------------------------------------------------------------
+00:07:38.299  [INFO] Total time:  02:52 min
+00:07:38.299  [INFO] Finished at: 2023-09-24T15:09:06+02:00
+00:07:38.299  [INFO] ------------------------------------------------------------------------
+00:07:38.320  [Pipeline] echo
+00:07:38.326  koniec Testy
+00:07:38.334  [Pipeline] }
+00:07:38.372  [Pipeline] // timestamps
+00:07:38.388  [Pipeline] }
+00:07:38.425  [Pipeline] // stage
+00:07:38.450  [Pipeline] stage
+00:07:38.455  [Pipeline] { (Uruchomienie aplikacji)
+00:07:38.499  [Pipeline] timestamps
+00:07:38.499  The timestamps step is unnecessary when timestamps are enabled for all Pipeline builds.
+00:07:38.505  [Pipeline] {
+00:07:38.534  [Pipeline] echo
+00:07:38.539  start Uruchomienie aplikacji
+00:07:38.551  [Pipeline] bat
+00:07:38.819
+00:07:38.819  C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary>java -jar target/eLibrary-4.0.0.jar
+00:07:40.754
+00:07:40.754    .   ____          _            __ _ _
+00:07:40.754   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+00:07:40.754  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+00:07:40.754   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+00:07:40.754    '  |____| .__|_| |_|_| |_\__, | / / / /
+00:07:40.754   =========|_|==============|___/=/_/_/_/
+00:07:40.754   :: Spring Boot ::                (v3.1.2)
+00:07:40.754
+00:07:40.754  2023-09-24T15:09:11.504+02:00  INFO 12148 --- [           main] com.eLibrary.Application                 : Starting Application v4.0.0 using Java 17.0.6 with PID 12148 (C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary\target\eLibrary-4.0.0.jar started by DESKTOP-853R33U$ in C:\ProgramData\Jenkins\.jenkins\workspace\eLibrary)
+00:07:40.754  2023-09-24T15:09:11.506+02:00  INFO 12148 --- [           main] com.eLibrary.Application                 : No active profile set, falling back to 1 default profile: "default"
+00:07:42.167  2023-09-24T15:09:13.036+02:00  INFO 12148 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+00:07:42.167  2023-09-24T15:09:13.137+02:00  INFO 12148 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+00:07:43.665  2023-09-24T15:09:14.406+02:00  INFO 12148 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+00:07:43.665  2023-09-24T15:09:14.424+02:00  INFO 12148 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+00:07:43.665  2023-09-24T15:09:14.424+02:00  INFO 12148 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+00:07:43.665  2023-09-24T15:09:14.588+02:00  INFO 12148 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+00:07:43.665  2023-09-24T15:09:14.593+02:00  INFO 12148 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2955 ms
+00:07:43.937  2023-09-24T15:09:14.961+02:00  INFO 12148 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+00:07:44.906  2023-09-24T15:09:15.645+02:00  INFO 12148 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43cf6ea3
+00:07:44.906  2023-09-24T15:09:15.648+02:00  INFO 12148 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+00:07:45.849  2023-09-24T15:09:16.546+02:00  INFO 12148 --- [           main] liquibase.changelog                      : Reading from library.DATABASECHANGELOG
+00:07:45.849  2023-09-24T15:09:16.555+02:00  INFO 12148 --- [           main] liquibase.executor                       : Changelog query completed.
+00:07:45.849  Database is up to date, no changesets to execute
+00:07:45.849  2023-09-24T15:09:16.763+02:00  INFO 12148 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+00:07:45.849  2023-09-24T15:09:16.884+02:00  INFO 12148 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+00:07:45.849  2023-09-24T15:09:16.890+02:00  INFO 12148 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+00:07:46.434  2023-09-24T15:09:17.236+02:00  INFO 12148 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+00:07:46.712  2023-09-24T15:09:17.531+02:00  INFO 12148 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+00:07:46.992  2023-09-24T15:09:17.920+02:00  INFO 12148 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+00:07:47.932  2023-09-24T15:09:18.887+02:00  INFO 12148 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:07:47.932  2023-09-24T15:09:18.969+02:00  INFO 12148 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+00:07:48.889  2023-09-24T15:09:19.846+02:00  WARN 12148 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+00:07:50.880  2023-09-24T15:09:21.500+02:00  INFO 12148 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+00:07:50.880  2023-09-24T15:09:21.533+02:00  INFO 12148 --- [           main] com.eLibrary.Application                 : Started Application in 10.863 seconds (process running for 11.776)
+00:07:58.978  2023-09-24T15:09:28.708+02:00  INFO 12148 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+00:07:58.978  2023-09-24T15:09:28.710+02:00  INFO 12148 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+00:07:58.978  2023-09-24T15:09:28.733+02:00  INFO 12148 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+00:07:59.005  [Pipeline] echo
+00:07:59.011  koniec Uruchomienie aplikacji
+00:07:59.019  [Pipeline] }
+00:07:59.057  [Pipeline] // timestamps
+00:07:59.071  [Pipeline] }
+00:07:59.108  [Pipeline] // stage
+00:07:59.124  [Pipeline] }
+00:07:59.171  [Pipeline] // node
+00:07:59.186  [Pipeline] End of Pipeline
+00:07:59.239  Finished: SUCCESS
