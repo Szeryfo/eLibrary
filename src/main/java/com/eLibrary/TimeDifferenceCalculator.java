@@ -24,7 +24,7 @@ public class TimeDifferenceCalculator {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
             String line;
-            boolean foundStart = false;
+            boolean foundStart = false;//
 
             while ((line = reader.readLine()) != null) {
                 if (line.contains(start)) {
