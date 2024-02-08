@@ -199,7 +199,7 @@
 00:07:59.005  [Pipeline] echo
 00:07:59.011  koniec Uruchomienie aplikacji
 00:07:59.019  [Pipeline] }
-00:07:59.057  [Pipeline] // timestamps
+00:07:59.057  [Pipeline] // timestamp
 00:07:59.071  [Pipeline] }
 00:07:59.108  [Pipeline] // stage
 00:07:59.124  [Pipeline] }
