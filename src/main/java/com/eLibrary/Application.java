@@ -9,7 +9,7 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
 
-        // for tests only
+        // for tests
         System.exit(0);
     }
 
