@@ -198,8 +198,8 @@
 00:07:58.978  2023-09-24T15:09:28.733+02:00  INFO 12148 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 00:07:59.005  [Pipeline] echo
 00:07:59.011  koniec Uruchomienie aplikacji
-00:07:59.019  [Pipeline] }
-00:07:59.057  [Pipeline] // timestamp
+00:07:59.019  [Pipeline]
+00:07:59.057  [Pipeline] // timestam
 00:07:59.071  [Pipeline] }
 00:07:59.108  [Pipeline] // stag
 00:07:59.124  [Pipeline] }
