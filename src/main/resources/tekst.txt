@@ -201,7 +201,7 @@
 00:07:59.019  [Pipeline] }
 00:07:59.057  [Pipeline] // timestamp
 00:07:59.071  [Pipeline] }
-00:07:59.108  [Pipeline] // stage
+00:07:59.108  [Pipeline] // stag
 00:07:59.124  [Pipeline] }
 00:07:59.171  [Pipeline] // node
 00:07:59.186  [Pipeline] End of Pipeline
