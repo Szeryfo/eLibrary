@@ -8,7 +8,7 @@ spring:
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-    # Springs Fox 3.0.0 not supporting new PathPattern Based Path Matching Strategy for Spring MVC which is now the new default from spring-boot 2.6.0
+    # Springs Fox 3.0.0 nsot supporting new P2athPattern Based Path Matching Strategy for Spring MVC which is now the new default from spring-boot 2.6.0
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
