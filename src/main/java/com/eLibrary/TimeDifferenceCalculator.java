@@ -41,10 +41,10 @@ public class TimeDifferenceCalculator {
                     for (String part : parts) {
                         if (part.matches("\\d{2}:\\d{2}:\\d{2}\\.\\d{3}")) {
                             endTime = LocalTime.parse(part);
-                            break; // Jeśli znaleziono czas końcowy, przerwij pętlę
+                            break;
                         }
                     }
-                    break; // Przerwij pętlę, gdy znaleziono czas końcowy
+                    break;
                 }
             }
 
